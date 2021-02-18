@@ -1,0 +1,46 @@
+
+@use 'helpers/general' as *;
+@use 'helpers/colors';
+
+:host > .root{
+    
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.5rem;
+    align-items: center;
+    @include setProps(margin-top margin-bottom, 0.5rem);
+
+
+    > svg{
+        @include setProps(height width, 1.2rem);
+        fill: colors.$subtitle-gray-text;
+    }
+
+    > .number{
+        color: colors.$subtitle-gray-text;
+        font-size: 0.8rem;
+    }
+
+    @mixin configureHoverState($color){
+        @include roundedBGOnHover(rgba($color, 0.2), $color, $insets: (
+        left: -0.5rem,
+        right: -0.7rem, 
+        top: -0.5rem,
+        bottom: -0.5rem,
+    )); 
+    }
+
+    &.comment{
+        @include configureHoverState($color: colors.$theme-blue);
+    }
+
+    &.retweet{
+        @include configureHoverState($color: rgb(23, 191, 99));
+    }
+    &.like{
+        @include configureHoverState($color: red);
+    }
+
+    
+
+}

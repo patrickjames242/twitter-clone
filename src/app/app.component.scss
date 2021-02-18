@@ -1,0 +1,60 @@
+
+@use 'helpers/general' as *;
+@use 'helpers/constants';
+
+:host > .holder{
+
+    max-width: 80rem;
+    @include setProps(margin-left margin-right, auto);
+
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    > .left-section, > .right-section{
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    > .left-section{
+        border-right: constants.$border-info;
+        overflow-y: auto;
+    }
+
+    > .center{
+
+        $title-bar-height: 3.5rem;
+        border-right: constants.$border-info;
+
+        > .title-bar{
+            z-index: 10;
+            background-color: black;
+            display: grid;
+            align-items: center;
+            position: sticky;
+            @include setProps(left top right, 0);
+            border-bottom: constants.$border-info;
+            font-family: bold;
+            height: $title-bar-height;
+
+            > .title{
+                margin-left: 1.5rem;
+                font-size: 1.3rem;
+            }
+        }        
+    }
+    
+    @media(max-width: constants.$side-nav-bar-compression-max-width){
+        max-width: 67rem;
+        @media(max-width: 57rem){
+            max-width: 42rem;
+            > .right-section{
+                display: none;
+            }   
+        }
+    }
+    
+}
+
+

@@ -1,0 +1,16 @@
+
+@use 'helpers/constants';
+
+:host > .root{
+
+    > .title-view{
+
+        padding: 1rem;
+        background-color: black;
+        z-index: 10;
+        border-bottom: constants.$border-info;
+        position: sticky;
+        top: 0;
+    }
+
+}

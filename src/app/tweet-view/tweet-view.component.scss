@@ -1,0 +1,45 @@
+
+@use 'helpers/general' as *;
+@use 'helpers/constants';
+@use 'helpers/colors';
+
+:host > .root{
+    
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    @include setProps(padding-left padding-right padding-top, 1rem);
+    border-bottom: constants.$border-info;
+    
+    > img{
+        display: block;
+        @include setProps(height width, 3rem);
+        border-radius: 1000000000rem;
+    }
+
+    > .content{
+        > .title-row{
+            > .author-name{
+                font-weight: 600;
+            }
+            > .author-username{
+                margin-left: 0.7rem;
+                color: colors.$subtitle-gray-text;
+                font-size: 0.9rem;
+            }
+        }
+
+        > .text{
+            font-size: 0.9rem;
+        }
+
+        > .bottom-button-view{
+            display: grid;
+            grid-auto-flow: column;
+            justify-items: start;
+        }
+    }
+
+
+}
+

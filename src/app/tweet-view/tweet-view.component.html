@@ -1,0 +1,19 @@
+
+<div class="root">
+    <img src="{{tweet.authorImage}}" alt="">
+    <div class="content">
+        <div class="title-row">
+            <span class="author-name">{{tweet.authorName}}</span>
+            <span class="author-username">@{{tweet.authorUserName}} • {{tweet.time}}</span>
+        </div>
+        <div class="text">
+            {{tweet.text}}
+        </div>
+        <div class="bottom-button-view">
+            <app-tweet-bottom-button [buttonType]="BottomButtonType.comment"></app-tweet-bottom-button>
+            <app-tweet-bottom-button [buttonType]="BottomButtonType.retweet"></app-tweet-bottom-button>
+            <app-tweet-bottom-button [buttonType]="BottomButtonType.like"></app-tweet-bottom-button>
+        </div>
+    </div>
+</div>
+

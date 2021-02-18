@@ -1,0 +1,27 @@
+@use 'helpers/general' as *;
+@use 'helpers/colors';
+
+:host > .search-bar{
+        
+    background-color: rgb(32, 35, 39);
+    border-radius: 1000000000rem;
+    padding: 1rem;
+    @include setProps(padding-top padding-bottom, 0.5rem);
+    display: grid;
+    gap: 0.8rem;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+
+
+    > svg{
+        @include setProps(height width, 1.2rem);
+        fill: colors.$subtitle-gray-text;
+    }
+
+    > input{
+        color: colors.$theme-off-white;
+        &::placeholder{
+            color: colors.$subtitle-gray-text;
+        }
+    }
+}

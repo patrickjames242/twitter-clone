@@ -1,0 +1,30 @@
+
+
+@use 'helpers/constants';
+@use 'helpers/colors';
+@use 'helpers/general' as *;
+
+
+:host > .root{
+    cursor: pointer;
+
+    padding: 1rem;
+    @include setProps(padding-top padding-bottom, 0.8rem);
+    border-top: constants.$border-info;
+
+    > .title{
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    > .top-subtitle, .num-of-tweets{
+        font-size: 0.8rem;
+        color: colors.$subtitle-gray-text;
+    }
+
+    &:hover{
+        background-color: rgb(28, 31, 35);
+    }
+
+}
+

@@ -1,0 +1,63 @@
+
+@use 'helpers/general' as *;
+@use 'helpers/colors';
+@use 'helpers/constants';
+
+:host > .root{
+
+    padding-top: 1rem;
+
+    @include setProps(padding-left padding-right, 2rem);
+
+    display: grid;
+    gap: 2rem;
+    justify-items: start;
+
+    > .twitter-icon > svg{
+
+        @include setProps(height width, 2rem);
+        fill: colors.$theme-off-white;
+    }
+
+    > .tweet-button{
+
+        background-color: colors.$theme-blue;
+        padding: 1rem;
+        border-radius: 100000000rem;
+        width: 14rem;
+        
+        > .text{
+            font-weight: 600;
+            color: white;
+        }
+
+        > svg{
+            display: none;
+            fill: white;
+            @include setProps(height width, 1.5rem);
+        }
+    }
+
+    @media(max-width: constants.$side-nav-bar-compression-max-width){
+        justify-items: center;
+        @include setProps(padding-left padding-right, 1.2rem);
+
+        > .tweet-button{
+            padding: unset;
+            @include setProps(height width, 3rem);
+
+            display: grid;
+            place-items: center;
+
+            > .text{
+                display: none;
+            }
+
+            > svg{
+                display: unset;
+            }
+        }
+    }
+
+}
+
