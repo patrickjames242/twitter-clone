@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getRandomTweets } from 'src/helpers/general';
 
 @Component({
   selector: 'app-home',
@@ -11,5 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  tweets = getRandomTweets(20);
 
 }

@@ -1,18 +1,7 @@
 
 
 <div class="root">
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
-    <app-tweet-view></app-tweet-view>
+    <app-tweet-view *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet-view>
 </div>
 
 

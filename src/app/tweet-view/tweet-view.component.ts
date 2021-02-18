@@ -1,16 +1,9 @@
 
 import { Component, Input, OnInit } from '@angular/core';
+import { Tweet } from 'src/helpers/general';
 import { ButtonType } from './tweet-bottom-button/tweet-bottom-button.component';
 
 
-interface Tweet{
-  authorName: string;
-  authorUserName: string;
-  authorImage: string;
-  text: string;
-  imageUrl?: string;
-  time: string;
-}
 
 
 @Component({
