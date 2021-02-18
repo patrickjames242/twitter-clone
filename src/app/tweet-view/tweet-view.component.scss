@@ -19,6 +19,7 @@
 
     > .content{
         > .title-row{
+            @include break-long-words;
             > .author-name{
                 font-weight: 600;
             }
@@ -31,6 +32,7 @@
 
         > .text{
             font-size: 0.9rem;
+            @include break-long-words;
         }
 
         > .bottom-button-view{
